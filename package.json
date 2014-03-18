@@ -1,0 +1,19 @@
+{
+  "name": "Cookie.js",
+  "version": "0.0.1",
+  "description": "Access browser's cookies easier.",
+  "license": "MIT",
+  "author": "Chris Yip <i@chrisyip.im>",
+  "repository": "git@github.com:ChrisYip/cookie.js.git",
+  "dependencies": {
+    "gulp": "^3.5",
+    "gulp-util": "^2.2",
+    "gulp-rename": "^1.2",
+    "gulp-uglify": "^0.2",
+    "gulp-traceur": "^0.2",
+    "gulp-clean": "^0.2"
+  },
+  "engines": {
+    "node": ">= 0.9"
+  }
+}
