@@ -2,7 +2,7 @@ var gulp = require('gulp'),
     gutil = require('gulp-util'),
     rename = require('gulp-rename'),
     uglify = require('gulp-uglify'),
-    traceur = require('gulp-traceur'),
+    coffee = require('gulp-coffee'),
     clean = require('gulp-clean')
 ;
 
@@ -14,10 +14,8 @@ gulp.task('clean', function () {
 
 gulp.task('build', ['clean'], function() {
   gulp
-    .src('./src/*.js')
-    .pipe(traceur({
-      modules: false // work with browsers
-    }))
+    .src('./src/**/*.coffee')
+    .pipe(coffee())
     .pipe(gulp.dest('./dist'))
     .pipe(rename({
       suffix: '.min'
@@ -29,14 +27,12 @@ gulp.task('build', ['clean'], function() {
 });
 
 gulp.task('watch', function () {
-  gulp.watch('./src/**/*.js', function (event) {
+  gulp.watch('./src/**/*.coffee', function (event) {
     gutil.log(gutil.colors.magenta(event.path.replace(__dirname, '.')), 'changed');
 
     gulp
       .src(event.path)
-      .pipe(traceur({
-        modules: false // work with browsers
-      }))
+      .pipe(coffee().on('error', gutil.log))
       .pipe(gulp.dest('./dist'));
   });
 });
