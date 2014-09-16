@@ -11,7 +11,7 @@
   unescape = global.unescape;
   document = global.document;
   objectKeys = (function(object) {
-    var index = - 1,
+    var index = -1,
         props = [],
         result = [],
         length;
@@ -29,7 +29,8 @@
   });
   objectAssign = (function() {
     for (var args = [],
-        $__0 = 0; $__0 < arguments.length; $__0++) args[$__0] = arguments[$__0];
+        $__0 = 0; $__0 < arguments.length; $__0++)
+      args[$__0] = arguments[$__0];
     var object = args[0],
         source = args[1],
         guard = args[2];
@@ -41,7 +42,7 @@
         type = typeof guard;
     while (++argsIndex < argsLength) {
       source = args[argsIndex];
-      var index = - 1,
+      var index = -1,
           props = objectKeys(source),
           length = props.length;
       while (++index < length) {
@@ -67,10 +68,10 @@
           path,
           secure;
       options = objectAssign({}, defaultOption, opts);
-      domain = (options.domain ? '; domain=' + options.domain: '');
+      domain = (options.domain ? '; domain=' + options.domain : '');
       expires = options.expires;
       path = '; path=' + (options.path || '/');
-      secure = (options.secure ? '; secure': '');
+      secure = (options.secure ? '; secure' : '');
       switch (typeof expires) {
         case 'number':
           expires = '; max-age=' + expires;
@@ -79,7 +80,7 @@
           expires = '; expires=' + new Date(expires).toGMTString();
           break;
         case 'object':
-          expires = ('toGMTString'in expires ? '; expires=' + expires.toGMTString(): '');
+          expires = ('toGMTString' in expires ? '; expires=' + expires.toGMTString() : '');
           break;
         default:
           expires = '';
@@ -99,7 +100,7 @@
     keys: (function() {
       var arr = document.cookie.split('; '),
           list = [];
-      for (var i = arr.length; i--;) {
+      for (var i = arr.length; i--; ) {
         list.unshift(arr[i].split('=')[0]);
       }
       return list;

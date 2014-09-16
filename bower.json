@@ -1,7 +1,10 @@
 {
-  "name": "Cookie.js",
+  "name": "browser-cookie.js",
   "description": "Access browser's cookies easier.",
-  "version": "0.0.1",
+  "license": "MIT",
+  "authors": [
+    "Chris Yip <i@chrisyip.im>"
+  ],
   "keywords": [
     "js",
     "cookie"
@@ -13,6 +16,7 @@
   ],
   "ignore": [
     ".*",
-    "src"
+    "src/",
+    "docs/"
   ]
 }
